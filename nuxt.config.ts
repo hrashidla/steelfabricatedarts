@@ -19,8 +19,15 @@ export default defineNuxtConfig({
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     }
   },
-
-  modules: ['@nuxt/eslint', '@nuxtjs/prismic', '@nuxtjs/tailwindcss', '@nuxt/fonts'],
+  css: ['~/assets/css/main.css'],
+  modules: [
+    '@nuxt/eslint',
+    '@nuxtjs/prismic',
+    '@nuxtjs/tailwindcss',
+    '@nuxt/fonts',
+    '@nuxt/icon',
+    'nuxt-swiper',
+  ],
 
   prismic: {
     endpoint: apiEndpoint || repositoryName,
