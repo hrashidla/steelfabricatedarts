@@ -6,14 +6,14 @@ defineProps<{ settings?: Content.SettingsDocument }>()
 
 <template>
   <footer>
-    <div class="bg-black/80">
+    <div class="bg-stone-950 mt-24 pb-24 lg:pb-0">
       <Bounded>
         <div class="lg:flex ">
-          <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
-            <h2 class="mb-12">Start a <br/>
-              <span class="text-3xl">Project?</span>
+          <div class="lg:w-1/2 lg:mb-0 lg:pr-12 pb-24">
+            <h2 class="mb-12">Start a 
+              <span class="block mt-4 text-4xl lg:text-6xl">Project?</span>
             </h2>
-            <div class="mt-8 p-4 lg:p-8 bg-gray-850 rounded border border-1 border-gray-800 bg-gray-100/10">
+            <div class="mt-6 p-4 lg:p-8 rounded-lg border border-1 border-stone-800 bg-stone">
               <div>Steve Campos</div>
               <div>Principal</div>
               <div>Steel Fabricated Arts</div>
@@ -53,8 +53,6 @@ defineProps<{ settings?: Content.SettingsDocument }>()
       </Bounded>         
     </div>
     <div class="bg-black/90">
-
-    
       <nav
         class="flex flex-col items-center justify-between gap-6 px-8 py-7 md:flex-row border-t border-gray-600"
         aria-label="Footer"

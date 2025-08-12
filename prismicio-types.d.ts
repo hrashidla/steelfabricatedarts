@@ -509,35 +509,18 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
- * Item in *OneThirdTwoThird → Default → Primary → Images*
- */
-export interface OneThirdTwoThirdSliceDefaultPrimaryImagesItem {
-  /**
-   * Image field in *OneThirdTwoThird → Default → Primary → Images*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: one_third_two_third.default.primary.images[].image
-   * - **Documentation**: https://prismic.io/docs/fields/image
-   */
-  image: prismic.ImageField<never>;
-}
-
-/**
  * Primary content in *OneThirdTwoThird → Default → Primary*
  */
 export interface OneThirdTwoThirdSliceDefaultPrimary {
   /**
-   * Images field in *OneThirdTwoThird → Default → Primary*
+   * Image field in *OneThirdTwoThird → Default → Primary*
    *
-   * - **Field Type**: Group
+   * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: one_third_two_third.default.primary.images[]
-   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   * - **API ID Path**: one_third_two_third.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/fields/image
    */
-  images: prismic.GroupField<
-    Simplify<OneThirdTwoThirdSliceDefaultPrimaryImagesItem>
-  >;
+  image: prismic.ImageField<never>;
 
   /**
    * Title field in *OneThirdTwoThird → Default → Primary*
@@ -872,7 +855,6 @@ declare module "@prismicio/client" {
       HeroSliceVariation,
       HeroSliceDefault,
       OneThirdTwoThirdSlice,
-      OneThirdTwoThirdSliceDefaultPrimaryImagesItem,
       OneThirdTwoThirdSliceDefaultPrimary,
       OneThirdTwoThirdSliceVariation,
       OneThirdTwoThirdSliceDefault,

@@ -20,10 +20,10 @@ defineProps(
       :data-slice-variation="slice.variation"
     >
       <div class="lg:grid grid-cols-3 gap-8">
-        <div v-for="item in slice.primary.bucket" class="text-center bg-gray-900 text-black p-4 lg:p-8 border border-1 border-black rounded-lg">
+        <div v-for="item in slice.primary.bucket" class="text-center bg-stone-900 text-stone-500 p-4 lg:p-8 border border-1 border-stone-950 rounded-lg mb-8 lg:mb-0">
           <!-- {{ item }} -->
           <PrismicImage :field="item.icon" class="mb-8 w-12 mx-auto" />
-          <h3 class="text-3xl mb-4">{{ item.title }}</h3>
+          <h3 class="">{{ item.title }}</h3>
           <p>{{ item.subtitle }}</p>
           
         </div>

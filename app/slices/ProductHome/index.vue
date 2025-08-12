@@ -22,21 +22,21 @@ defineProps(
     <!-- <pre>{{ slices }}</pre> -->
 			<h2 class="text-center">{{ slice.primary.title }}</h2>
 			<PrismicRichText :field="slice.primary.body" 
-				class="text-center"
+				class="mx-auto w-full max-w-xl"
 				wrapper="p"/>
 
 			<PrismicImage :field="slice.primary.featured_image" 
 				class="mt-8"
 				wrapper="div"/>
 			
-			<div class="text-center mb-16">
+			<p class="text-center mb-16 text-sm">
 				{{ slice.primary.featured_image.alt  }}
-			</div>
+			</p>
 			<div class="lg:grid lg:grid-cols-3 gap-8">
 				<template v-for="item in slice.primary.product_grid" >
-					<div>
-						<PrismicImage :field="item.product" class="mb-8 lg:mb-0" />
-						<p>{{ item.product.alt  }}</p>
+					<div class="mb-16 lg:mb-8">
+						<PrismicImage :field="item.product" class="mb-2" />
+						<p class="text-sm">{{ item.product.alt  }}</p>
 					</div>
 				</template>
 			</div>

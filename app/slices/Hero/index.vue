@@ -62,19 +62,24 @@ defineProps(
 
 <template>
   <div data-slice-type="slice.slice_type" data-slice-variation="slice.variation">
-
     <div class="w-full relative">
-      <div class="bg-gray-950/75 w-1/2 h-full p-24 z-30 absolute left-0 top-0">
+      <div 
+      class="bg-stone-950/50 z-30 absolute bottom-0 pt-4 w-full text-center
+              lg:bg-stone-950/85 lg:w-1/2 lg:h-full lg:pt-48 lg:p-24 lg:left-0 lg:top-0 lg:text-left
+      
+      ">
+
+
         <PrismicText
             :field="slice.primary.title"
-            class="text-5xl font-bold mb-8"
+            class=""
             wrapper="h1"
           />
-           <PrismicText
+        <PrismicText
             :field="slice.primary.body"
             class=""
             wrapper="p"
-          />
+        />
       </div>
       <div class="w-full">
         <PrismicImage class="w-full grayscale" :field="slice.primary.image" />

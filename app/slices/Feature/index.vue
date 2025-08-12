@@ -22,11 +22,13 @@ defineProps(
     <!-- <pre>{{ slice }}</pre> -->
       <div class="lg:flex gap-8">
         <div class="lg:w-1/2 mb-12 lg:mb-0">
-          <PrismicImage :field="slice.primary.image" class="grayscale"/>
-        </div>
-        <div class="lg:w-1/2 mb-12 lg:mb-0">
           <h2 class="mb-12">{{ slice.primary.title }}</h2>
-          <div><PrismicRichText :field="slice.primary.body" /></div>
+          <div class=""><PrismicRichText 
+            :field="slice.primary.body" 
+            /></div>
+        </div>
+        <div class="lg:w-1/2 mb-12 lg:mb-0 lg:order-first">
+          <PrismicImage :field="slice.primary.image" class="grayscale"/>
         </div>
       </div>
     </section>

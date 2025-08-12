@@ -9,22 +9,23 @@ defineProps(getSliceComponentProps<Content.RichTextSlice>(
 </script>
 
 <template>
-  <section>
-    <PrismicRichText
-      :field="slice.primary.content"
-      class="richtext"
-      wrapper="section"
-    />
-  </section>
+  <Bounded>
+    <section>
+      <PrismicRichText
+        :field="slice.primary.content"
+        class="richtext mx-auto w-full max-w-xl"
+        wrapper="section"
+      />
+    </section>
+  </Bounded>
 </template>
 
 <style scoped>
 section:deep(.richtext) {
-  max-width: 600px;
-  margin: 6em auto;
+  
 }
 
 section:deep(.richtext .codespan) {
-  font-family: monospace;
+  
 }
 </style>
