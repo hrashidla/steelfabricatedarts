@@ -64,12 +64,10 @@ defineProps(
   <div data-slice-type="slice.slice_type" data-slice-variation="slice.variation">
     <div class="w-full relative">
       <div 
-      class="bg-stone-950/50 z-30 absolute bottom-0 pt-4 w-full text-center
+      class="bg-stone-950/50 z-30 absolute bottom-0 py-3 w-full text-center
               lg:bg-stone-950/85 lg:w-1/2 lg:h-full lg:pt-48 lg:p-24 lg:left-0 lg:top-0 lg:text-left
       
       ">
-
-
         <PrismicText
             :field="slice.primary.title"
             class=""

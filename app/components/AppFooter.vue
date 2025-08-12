@@ -6,14 +6,17 @@ defineProps<{ settings?: Content.SettingsDocument }>()
 
 <template>
   <footer>
-    <div class="bg-stone-950 mt-24 pb-24 lg:pb-0">
+    <div class="bg-stone-950 mt-24 pb-24 lg:pb-0 relative">
+      <!-- <div class="absolute bottom-0 left-40 z-0 opacity-90">
+        <Icon name="game-icons:anvil" class="bg-icon opacity-10"/>
+      </div> -->
       <Bounded>
-        <div class="lg:flex ">
-          <div class="lg:w-1/2 lg:mb-0 lg:pr-12 pb-24">
-            <h2 class="mb-12">Start a 
+        <div class="lg:flex z-10 relative">  
+          <div class="lg:w-1/2 lg:mb-0 lg:pr-12 pb-24 ">
+            <h2 class="mb-6">Start a
               <span class="block mt-4 text-4xl lg:text-6xl text-yellow-300">Project?</span>
             </h2>
-            <div class="mt-2 p-4 lg:p-8 rounded-lg border border-1 border-yellow-300 bg-stone-900">
+            <div class="mt-2 p-4 lg:p-8 rounded-lg border border-1 border-yellow-300 bg-stone-900/80">
               <h3 class="text-white font-bold">Steve Campos</h3>
               <div>Owner</div>
               <div class="mb-2">Steel Fabricated Arts</div>
@@ -71,3 +74,8 @@ defineProps<{ settings?: Content.SettingsDocument }>()
     </div>
   </footer>
 </template>
+<style scoped>
+/* .bg-icon{
+  font-size:500px;
+} */
+</style>
