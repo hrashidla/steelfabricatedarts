@@ -55,26 +55,19 @@
                   },
                   "thumbnails": []
                 }
-              },
-              "product_image": {
-                "type": "Text",
-                "config": {
-                  "label": "Product Image",
-                  "placeholder": ""
-                }
-              },
-              "link": {
-                "type": "Link",
-                "config": {
-                  "label": "Link",
-                  "placeholder": "",
-                  "select": null,
-                  "allowTargetBlank": false,
-                  "allowText": false,
-                  "repeat": true
-                }
               }
             }
+          }
+        },
+        "button_link": {
+          "type": "Link",
+          "config": {
+            "label": "Button Link",
+            "placeholder": "",
+            "select": null,
+            "allowTargetBlank": false,
+            "allowText": true,
+            "repeat": false
           }
         }
       },

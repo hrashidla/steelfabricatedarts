@@ -11,13 +11,13 @@ defineProps<{ settings?: Content.SettingsDocument }>()
         <div class="lg:flex ">
           <div class="lg:w-1/2 lg:mb-0 lg:pr-12 pb-24">
             <h2 class="mb-12">Start a 
-              <span class="block mt-4 text-4xl lg:text-6xl">Project?</span>
+              <span class="block mt-4 text-4xl lg:text-6xl text-yellow-300">Project?</span>
             </h2>
-            <div class="mt-6 p-4 lg:p-8 rounded-lg border border-1 border-stone-800 bg-stone">
-              <div>Steve Campos</div>
-              <div>Principal</div>
-              <div>Steel Fabricated Arts</div>
-              <div>Lincoln Heights, Los Angeles</div>
+            <div class="mt-2 p-4 lg:p-8 rounded-lg border border-1 border-yellow-300 bg-stone-900">
+              <h3 class="text-white font-bold">Steve Campos</h3>
+              <div>Owner</div>
+              <div class="mb-2">Steel Fabricated Arts</div>
+              <div class="mb-2">Lincoln Heights, Los Angeles</div>
               <div>(555)-510-7777</div>
               <div>stevemaybecampos@gmail.com</div>
             </div>
@@ -54,7 +54,7 @@ defineProps<{ settings?: Content.SettingsDocument }>()
     </div>
     <div class="bg-black/90">
       <nav
-        class="flex flex-col items-center justify-between gap-6 px-8 py-7 md:flex-row border-t border-gray-600"
+        class="flex flex-col items-center justify-between gap-6 px-8 py-7 md:flex-row border-t border-stone-800"
         aria-label="Footer"
       >
       <NuxtLink to="/">
@@ -62,7 +62,7 @@ defineProps<{ settings?: Content.SettingsDocument }>()
         <span class="sr-only">{{ settings?.data.site_title }} home page</span>
       </NuxtLink>
 
-      <ul class="flex gap-6">
+      <ul class="lg:flex gap-6 text-center lg:text-left">
         <li v-for="link in settings?.data.navigation" :key="link.key">
           <PrismicLink :field="link" class="inline-flex min-h-11 items-center" />
         </li>

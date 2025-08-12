@@ -586,28 +586,6 @@ export interface ProductHomeSliceDefaultPrimaryProductGridItem {
    * - **Documentation**: https://prismic.io/docs/fields/image
    */
   product: prismic.ImageField<never>;
-
-  /**
-   * Product Image field in *ProductHome → Default → Primary → Product Grid*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: product_home.default.primary.product_grid[].product_image
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  product_image: prismic.KeyTextField;
-
-  /**
-   * Link field in *ProductHome → Default → Primary → Product Grid*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: product_home.default.primary.product_grid[].link
-   * - **Documentation**: https://prismic.io/docs/fields/link
-   */
-  link: prismic.Repeatable<
-    prismic.LinkField<string, string, unknown, prismic.FieldState, never>
-  >;
 }
 
 /**
@@ -654,6 +632,22 @@ export interface ProductHomeSliceDefaultPrimary {
    */
   product_grid: prismic.GroupField<
     Simplify<ProductHomeSliceDefaultPrimaryProductGridItem>
+  >;
+
+  /**
+   * Button Link field in *ProductHome → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: product_home.default.primary.button_link
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  button_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
   >;
 }
 

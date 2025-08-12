@@ -45,7 +45,7 @@ const isOpen = ref(false)
           <li v-for="link in settings?.data.navigation" :key="link.key">
             <PrismicLink
               :field="link"
-              class="block min-h-11 px-3 text-3xl first:mt-8"
+              class="block min-h-6 px-3 text-xl first:mt-8"
               :class="{ buttonLink: link.variant === 'Button' }"
               @click="isOpen = false"
             />

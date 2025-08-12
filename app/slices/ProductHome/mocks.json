@@ -73,35 +73,19 @@
 									"__TYPE__": "ImageContent",
 									"thumbnails": {}
 								}
-							],
-							[
-								"product_image",
-								{
-									"__TYPE__": "FieldContent",
-									"value": "population",
-									"type": "Text"
-								}
-							],
-							[
-								"link",
-								{
-									"__TYPE__": "RepeatableContent",
-									"type": "Link",
-									"value": [
-										{
-											"__TYPE__": "LinkContent",
-											"key": "89cf204e-0406-479c-ba4a-2161eb668652",
-											"value": {
-												"__TYPE__": "ExternalLink",
-												"url": "http://google.com"
-											}
-										}
-									]
-								}
 							]
 						]
 					}
 				]
+			},
+			"button_link": {
+				"__TYPE__": "LinkContent",
+				"key": "dd1a92ec-f5f3-4ca6-9743-e367dff7a3c7",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://slicemachine.dev",
+					"text": "find"
+				}
 			}
 		},
 		"items": []

@@ -4,17 +4,19 @@ const containerRef = ref(null)
 const swiper = useSwiper(containerRef, {
   effect: 'creative',
   loop: true,
+  navigation: true,
+  pagination: true,
   autoplay: {
     delay: 5000,
   },
   creativeEffect: {
     prev: {
       shadow: true,
-      translate: [0, 0, -400],
+      translate: [0, 0, -200],
     },
     next: {
       shadow: true,
-      translate: [0, 0, -400],
+      translate: [0, 0, -200],
     },
   },
 })
@@ -41,28 +43,17 @@ defineProps(
       :data-slice-type="slice.slice_type"
       :data-slice-variation="slice.variation"
     >
-    <ClientOnly>
-      <swiper-container ref="containerRef" :init="false">
-        <swiper-slide
-          v-for="(slide, idx) in slice.primary.images"
-          :key="idx"
-        >
-          <PrismicImage :field="slide.image" />
-          <p>{{ slide.image.alt }}</p>
-        </swiper-slide>
-      </swiper-container>
-    </ClientOnly> 
-		<div class="mt-6">
-			<button @click="swiper.prev()">
-				<Icon name="ph:arrow-circle-left-bold" class="text-3xl"/>
-			</button>
-			<!-- Go forward one slide -->
-			<button @click="swiper.next()">
-				<Icon name="ph:arrow-circle-right-bold" class="text-3xl"/>
-			</button>
-		</div>
-    <!-- Go back one slide -->
-    
+      <ClientOnly>
+        <swiper-container ref="containerRef" :init="false">
+          <swiper-slide
+            v-for="(slide, idx) in slice.primary.images"
+            :key="idx"
+          >
+            <PrismicImage :field="slide.image" />
+            <p>{{ slide.image.alt }}</p>
+          </swiper-slide>
+        </swiper-container>
+      </ClientOnly> 
     </section>
   </Bounded>
 </template>
@@ -73,5 +64,11 @@ defineProps(
   justify-content: center;
   align-items: center;
   height: auto;
+}
+:root {
+  --swiper-theme-color: #ffF000; /* Changes the primary theme color */
+  --swiper-navigation-color: #ffF000; /* Changes navigation arrow color */
+  --swiper-pagination-color: #ffF000; /* Changes pagination bullet color */
+  /* Add other Swiper CSS variables as needed for specific elements */
 }
 </style>

@@ -40,6 +40,10 @@ defineProps(
 					</div>
 				</template>
 			</div>
+			<div v-if="slice.primary.button_link.text" class="w-full text-center">
+				<PrismicLink :field="slice.primary.button_link" class="buttonLink"/>
+			</div>
+			
 		</Bounded>
   </section>
 </template>
