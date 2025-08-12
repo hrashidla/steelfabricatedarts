@@ -62,21 +62,22 @@ defineProps(
 
 <template>
   <div data-slice-type="slice.slice_type" data-slice-variation="slice.variation">
-		<div>
-      <PrismicText
-        :field="slice.primary.heading"
-        class="hero__heading mx-auto max-w-3xl text-balance text-5xl font-medium opacity-0 md:text-7xl"
-        wrapper="h1"
-      />
-      <PrismicText
-        :field="slice.primary.body"
-        class="hero__body mx-auto mt-6 max-w-md text-balance text-gray-300 opacity-0"
-        wrapper="p"
-      />
-      <div class="mt-16 w-full">
-        <div
-          class="absolute left-0 top-0 z-10 h-full w-2/3 bg-sky-700/50">1</div>
-        <PrismicImage class="rounded-lg" :field="slice.primary.image" />
+
+    <div class="w-full relative">
+      <div class="bg-gray-950/75 w-1/2 h-full p-24 z-30 absolute left-0 top-0">
+        <PrismicText
+            :field="slice.primary.title"
+            class="text-5xl font-bold mb-8"
+            wrapper="h1"
+          />
+           <PrismicText
+            :field="slice.primary.body"
+            class=""
+            wrapper="p"
+          />
+      </div>
+      <div class="w-full">
+        <PrismicImage class="w-full" :field="slice.primary.image" />
       </div>
     </div>
   </div>

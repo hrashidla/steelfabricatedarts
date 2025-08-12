@@ -69,7 +69,15 @@ type ContentRelationshipFieldWithData<
   >;
 }[Exclude<TCustomType[number], string>["id"]];
 
-type PageDocumentDataSlicesSlice = SliderSlice | HeroSlice | RichTextSlice;
+type PageDocumentDataSlicesSlice =
+  | ProductHomeSlice
+  | OneThirdTwoThirdSlice
+  | FeatureSlice
+  | BucketsSlice
+  | BentoSlice
+  | SliderSlice
+  | HeroSlice
+  | RichTextSlice;
 
 /**
  * Content for Page documents
@@ -186,6 +194,259 @@ export type SettingsDocument<Lang extends string = string> =
 export type AllDocumentTypes = PageDocument | SettingsDocument;
 
 /**
+ * Item in *Bento → Default → Primary → Bento*
+ */
+export interface BentoSliceDefaultPrimaryBentoItem {
+  /**
+   * Name field in *Bento → Default → Primary → Bento*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: bento.default.primary.bento[].name
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  name: prismic.KeyTextField;
+
+  /**
+   * Image field in *Bento → Default → Primary → Bento*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: bento.default.primary.bento[].image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Link field in *Bento → Default → Primary → Bento*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: bento.default.primary.bento[].link
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+}
+
+/**
+ * Primary content in *Bento → Default → Primary*
+ */
+export interface BentoSliceDefaultPrimary {
+  /**
+   * Title field in *Bento → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: bento.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Body field in *Bento → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: bento.default.primary.body
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  body: prismic.RichTextField;
+
+  /**
+   * Bento field in *Bento → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: bento.default.primary.bento[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  bento: prismic.GroupField<Simplify<BentoSliceDefaultPrimaryBentoItem>>;
+}
+
+/**
+ * Default variation for Bento Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type BentoSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<BentoSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Bento*
+ */
+type BentoSliceVariation = BentoSliceDefault;
+
+/**
+ * Bento Shared Slice
+ *
+ * - **API ID**: `bento`
+ * - **Description**: Bento
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type BentoSlice = prismic.SharedSlice<"bento", BentoSliceVariation>;
+
+/**
+ * Item in *Buckets → Default → Primary → Bucket*
+ */
+export interface BucketsSliceDefaultPrimaryBucketItem {
+  /**
+   * Title field in *Buckets → Default → Primary → Bucket*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: buckets.default.primary.bucket[].title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Subtitle field in *Buckets → Default → Primary → Bucket*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: buckets.default.primary.bucket[].subtitle
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * Icon field in *Buckets → Default → Primary → Bucket*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: buckets.default.primary.bucket[].icon
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  icon: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *Buckets → Default → Primary*
+ */
+export interface BucketsSliceDefaultPrimary {
+  /**
+   * Bucket field in *Buckets → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: buckets.default.primary.bucket[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  bucket: prismic.GroupField<Simplify<BucketsSliceDefaultPrimaryBucketItem>>;
+}
+
+/**
+ * Default variation for Buckets Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type BucketsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<BucketsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Buckets*
+ */
+type BucketsSliceVariation = BucketsSliceDefault;
+
+/**
+ * Buckets Shared Slice
+ *
+ * - **API ID**: `buckets`
+ * - **Description**: Buckets
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type BucketsSlice = prismic.SharedSlice<
+  "buckets",
+  BucketsSliceVariation
+>;
+
+/**
+ * Primary content in *Feature → Default → Primary*
+ */
+export interface FeatureSliceDefaultPrimary {
+  /**
+   * Image field in *Feature → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Header field in *Feature → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Body field in *Feature → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature.default.primary.body
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  body: prismic.RichTextField;
+
+  /**
+   * Callout List? field in *Feature → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: feature.default.primary.callout_list
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  callout_list: prismic.BooleanField;
+}
+
+/**
+ * Default variation for Feature Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type FeatureSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FeatureSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Feature*
+ */
+type FeatureSliceVariation = FeatureSliceDefault;
+
+/**
+ * Feature Shared Slice
+ *
+ * - **API ID**: `feature`
+ * - **Description**: Feature
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type FeatureSlice = prismic.SharedSlice<
+  "feature",
+  FeatureSliceVariation
+>;
+
+/**
  * Primary content in *Hero → Default → Primary*
  */
 export interface HeroSliceDefaultPrimary {
@@ -246,6 +507,202 @@ type HeroSliceVariation = HeroSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slices
  */
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
+
+/**
+ * Item in *OneThirdTwoThird → Default → Primary → Images*
+ */
+export interface OneThirdTwoThirdSliceDefaultPrimaryImagesItem {
+  /**
+   * Image field in *OneThirdTwoThird → Default → Primary → Images*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: one_third_two_third.default.primary.images[].image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *OneThirdTwoThird → Default → Primary*
+ */
+export interface OneThirdTwoThirdSliceDefaultPrimary {
+  /**
+   * Images field in *OneThirdTwoThird → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: one_third_two_third.default.primary.images[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  images: prismic.GroupField<
+    Simplify<OneThirdTwoThirdSliceDefaultPrimaryImagesItem>
+  >;
+
+  /**
+   * Title field in *OneThirdTwoThird → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: one_third_two_third.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Body field in *OneThirdTwoThird → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: one_third_two_third.default.primary.body
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  body: prismic.RichTextField;
+}
+
+/**
+ * Default variation for OneThirdTwoThird Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type OneThirdTwoThirdSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<OneThirdTwoThirdSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *OneThirdTwoThird*
+ */
+type OneThirdTwoThirdSliceVariation = OneThirdTwoThirdSliceDefault;
+
+/**
+ * OneThirdTwoThird Shared Slice
+ *
+ * - **API ID**: `one_third_two_third`
+ * - **Description**: OneThirdTwoThird
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type OneThirdTwoThirdSlice = prismic.SharedSlice<
+  "one_third_two_third",
+  OneThirdTwoThirdSliceVariation
+>;
+
+/**
+ * Item in *ProductHome → Default → Primary → Product Grid*
+ */
+export interface ProductHomeSliceDefaultPrimaryProductGridItem {
+  /**
+   * Product field in *ProductHome → Default → Primary → Product Grid*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: product_home.default.primary.product_grid[].product
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  product: prismic.ImageField<never>;
+
+  /**
+   * Product Image field in *ProductHome → Default → Primary → Product Grid*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: product_home.default.primary.product_grid[].product_image
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  product_image: prismic.KeyTextField;
+
+  /**
+   * Link field in *ProductHome → Default → Primary → Product Grid*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: product_home.default.primary.product_grid[].link
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  link: prismic.Repeatable<
+    prismic.LinkField<string, string, unknown, prismic.FieldState, never>
+  >;
+}
+
+/**
+ * Primary content in *ProductHome → Default → Primary*
+ */
+export interface ProductHomeSliceDefaultPrimary {
+  /**
+   * Title field in *ProductHome → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: product_home.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Body field in *ProductHome → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: product_home.default.primary.body
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  body: prismic.RichTextField;
+
+  /**
+   * Featured Image field in *ProductHome → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: product_home.default.primary.featured_image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  featured_image: prismic.ImageField<never>;
+
+  /**
+   * Product Grid field in *ProductHome → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: product_home.default.primary.product_grid[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  product_grid: prismic.GroupField<
+    Simplify<ProductHomeSliceDefaultPrimaryProductGridItem>
+  >;
+}
+
+/**
+ * Default variation for ProductHome Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ProductHomeSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ProductHomeSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ProductHome*
+ */
+type ProductHomeSliceVariation = ProductHomeSliceDefault;
+
+/**
+ * ProductHome Shared Slice
+ *
+ * - **API ID**: `product_home`
+ * - **Description**: ProductHome
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ProductHomeSlice = prismic.SharedSlice<
+  "product_home",
+  ProductHomeSliceVariation
+>;
 
 /**
  * Primary content in *RichText → Default → Primary*
@@ -396,10 +853,34 @@ declare module "@prismicio/client" {
       SettingsDocument,
       SettingsDocumentData,
       AllDocumentTypes,
+      BentoSlice,
+      BentoSliceDefaultPrimaryBentoItem,
+      BentoSliceDefaultPrimary,
+      BentoSliceVariation,
+      BentoSliceDefault,
+      BucketsSlice,
+      BucketsSliceDefaultPrimaryBucketItem,
+      BucketsSliceDefaultPrimary,
+      BucketsSliceVariation,
+      BucketsSliceDefault,
+      FeatureSlice,
+      FeatureSliceDefaultPrimary,
+      FeatureSliceVariation,
+      FeatureSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      OneThirdTwoThirdSlice,
+      OneThirdTwoThirdSliceDefaultPrimaryImagesItem,
+      OneThirdTwoThirdSliceDefaultPrimary,
+      OneThirdTwoThirdSliceVariation,
+      OneThirdTwoThirdSliceDefault,
+      ProductHomeSlice,
+      ProductHomeSliceDefaultPrimaryProductGridItem,
+      ProductHomeSliceDefaultPrimary,
+      ProductHomeSliceVariation,
+      ProductHomeSliceDefault,
       RichTextSlice,
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,

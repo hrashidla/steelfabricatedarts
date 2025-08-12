@@ -27,6 +27,21 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "product_home": {
+              "type": "SharedSlice"
+            },
+            "one_third_two_third": {
+              "type": "SharedSlice"
+            },
+            "feature": {
+              "type": "SharedSlice"
+            },
+            "buckets": {
+              "type": "SharedSlice"
+            },
+            "bento": {
+              "type": "SharedSlice"
+            },
             "slider": {
               "type": "SharedSlice"
             },
