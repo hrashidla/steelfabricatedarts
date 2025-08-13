@@ -101,8 +101,3 @@ defineProps(
     </div>
   </div>
 </template>
-<!-- <style lang="css">
-.hero{
-  /* @apply bg-center */
-}
-</style> -->
