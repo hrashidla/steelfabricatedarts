@@ -62,11 +62,27 @@ defineProps(
 
 <template>
   <div data-slice-type="slice.slice_type" data-slice-variation="slice.variation">
-    <div class="w-full relative">
+    <div class="h-screen w-full lg:hidden bg-center bg-cover grayscale relative" :style="{ backgroundImage: `url(${slice.primary.image.url})` }">
+      <div 
+      class="bg-stone-950/50 z-30 absolute top-1/2 py-6 px-2 w-full text-center
+              lg:bg-stone-950/85 lg:w-1/2 lg:h-full lg:pt-48 lg:p-24 lg:left-0 lg:top-0 lg:text-left
+      ">
+        <PrismicText
+            :field="slice.primary.title"
+            class="text-4xl mb-4"
+            wrapper="h1"
+          />
+        <PrismicText
+            :field="slice.primary.body"
+            class="text-lg"
+            wrapper="p"
+        />
+      </div>
+    </div>
+    <div class="w-full relative hidden lg:block">
       <div 
       class="bg-stone-950/50 z-30 absolute bottom-0 py-3 w-full text-center
               lg:bg-stone-950/85 lg:w-1/2 lg:h-full lg:pt-48 lg:p-24 lg:left-0 lg:top-0 lg:text-left
-      
       ">
         <PrismicText
             :field="slice.primary.title"
@@ -85,3 +101,8 @@ defineProps(
     </div>
   </div>
 </template>
+<!-- <style lang="css">
+.hero{
+  /* @apply bg-center */
+}
+</style> -->
