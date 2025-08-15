@@ -62,7 +62,7 @@ defineProps(
 
 <template>
   <div data-slice-type="slice.slice_type" data-slice-variation="slice.variation">
-    <div class="h-screen w-full lg:hidden bg-center bg-cover grayscale relative" :style="{ backgroundImage: `url(${slice.primary.image.url})` }">
+    <div class="min-h-screen w-full lg:hidden bg-center bg-cover grayscale relative" :style="{ backgroundImage: `url(${slice.primary.image.url})` }">
       <div 
       class="bg-stone-950/50 z-30 absolute top-1/2 py-6 px-2 w-full text-center
               lg:bg-stone-950/85 lg:w-1/2 lg:h-full lg:pt-48 lg:p-24 lg:left-0 lg:top-0 lg:text-left

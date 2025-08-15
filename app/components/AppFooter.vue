@@ -26,7 +26,7 @@ defineProps<{ settings?: Content.SettingsDocument }>()
             </div>
           </div>
           <div class="lg:w-1/2">
-          <form class="space-y-6" name="contact" method="POST" data-netlify="true">        
+          <form class="space-y-6" name="contact" method="POST" data-netlify="true" netlify>        
             <div>
               <label class="block text-sm font-medium text-gray-200">Your Name
               <input type="text" name="name"
