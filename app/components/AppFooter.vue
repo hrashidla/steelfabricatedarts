@@ -11,8 +11,8 @@ defineProps<{ settings?: Content.SettingsDocument }>()
         <Icon name="game-icons:anvil" class="bg-icon opacity-10"/>
       </div> -->
       <Bounded>
-        <div class="lg:flex z-10 relative">  
-          <div class="lg:w-1/2 lg:mb-0 lg:pr-12 pb-24 ">
+        <div class="lg:flex gap-x-16 z-10 relative">  
+          <div class="lg:w-1/2 lg:mb-0 pb-24 ">
             <h2 class="mb-6">Start a
               <span class="block mt-4 text-4xl lg:text-6xl text-yellow-300">Project?</span>
             </h2>
@@ -30,22 +30,19 @@ defineProps<{ settings?: Content.SettingsDocument }>()
             <div>
               <label class="block text-sm font-medium text-gray-200">Your Name
               <input type="text" name="name"
-                        class="block w-full px-3 py-2 mt-1 text-black bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-800 focus:border-gray-800"></label>
+                class="block w-full px-3 py-2 mt-1 text-black bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-800 focus:border-gray-800"></label>
             </div>
-
             <div>
               <label class="block text-sm font-medium text-gray-200">Email
               <input type="email" name="email" 
-                        class="block w-full px-3 py-2 mt-1 text-gray-700 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-800 focus:border-gray-800"></label>
+                class="block w-full px-3 py-2 mt-1 text-gray-700 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-800 focus:border-gray-800"></label>
             </div>
-
             <div>
               <label class="block text-sm font-medium text-gray-200">Your Message
               <textarea name="message"
-                  class="block h-24 w-full px-3 py-2 mt-1 text-gray-700 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-800 focus:border-gray-800">
+                class="block h-24 w-full px-3 py-2 mt-1 text-gray-700 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-800 focus:border-gray-800">
                 </textarea></label>
             </div>
-            
             <button type="submit" 
               class="mx-auto mt-12 buttonLink">
               Send Now
@@ -64,7 +61,6 @@ defineProps<{ settings?: Content.SettingsDocument }>()
         <SFALogo />
         <span class="sr-only">{{ settings?.data.site_title }} home page</span>
       </NuxtLink>
-
       <ul class="lg:flex gap-6 text-center lg:text-left">
         <li v-for="link in settings?.data.navigation" :key="link.key">
           <PrismicLink :field="link" class="inline-flex min-h-11 items-center" />
