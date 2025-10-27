@@ -95,7 +95,7 @@ defineProps(
             wrapper="p"
         />
       </div>
-      <div class="w-full">
+      <div class="w-full h-full">
         <PrismicImage class="w-full grayscale" :field="slice.primary.image" />
       </div>
     </div>
