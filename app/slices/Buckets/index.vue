@@ -20,7 +20,7 @@ defineProps(
       :data-slice-variation="slice.variation"
     >
       <div class="lg:grid grid-cols-3 gap-8">
-        <div v-for="item in slice.primary.bucket" class="text-center bg-stone-900 text-stone-500 p-4 lg:p-8 border border-1 border-stone-950 rounded-lg mb-8 lg:mb-0">
+        <div v-for="item in slice.primary.bucket" class="text-center bg-stone-900 text-stone-500 p-4 lg:p-8 border border-1 border-stone-950 rounded-lg mb-8 lg:mb-0" v-gsap.whenVisible.from="{ opacity: 0, y: 32 }">
           <!-- {{ item }} -->
           <PrismicImage :field="item.icon" class="mb-12 w-16 mx-auto" />
           <h3 class="text-white font-bold">{{ item.title }}</h3>

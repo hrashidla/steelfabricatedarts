@@ -20,13 +20,14 @@ defineProps(
 		<!-- <pre>{{ slice }}</pre> -->
 			<div class="lg:flex gap-12">
 				<div class="lg:w-1/3 mt-12 mb-12 lg:mt-0">
-					<PrismicImage :field="slice.primary.image" />
+					<PrismicImage :field="slice.primary.image" v-gsap.whenVisible.from="{ opacity: 0, y: 32 }"/>
 				</div>
-				<div class="lg:w-2/3">
+				<div class="lg:w-2/3" v-gsap.whenVisible.from="{ opacity: 0, y: 32 }">
 					<h2>{{ slice.primary.title }}</h2>
 					<PrismicRichText :field="slice.primary.body" 
 					wrapper="div"
-					class=""/>
+					class=""
+					/>
 				</div>
 			</div>			
 		</section>

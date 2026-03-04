@@ -25,6 +25,7 @@
     "eslint": "^9.31.0",
     "nuxt": "^4.0.0",
     "nuxt-swiper": "^2.0.1",
-    "slice-machine-ui": "^2.18.0"
+    "slice-machine-ui": "^2.18.0",
+    "v-gsap-nuxt": "^1.5.12"
   }
 }

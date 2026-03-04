@@ -27,6 +27,7 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxt/icon',
     'nuxt-swiper',
+    'v-gsap-nuxt',
   ],
 
   prismic: {

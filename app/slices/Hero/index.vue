@@ -62,11 +62,9 @@ defineProps(
 
 <template>
   <div data-slice-type="slice.slice_type" data-slice-variation="slice.variation">
-    <div class="h-[550px] w-full lg:hidden bg-center bg-cover grayscale relative" :style="{ backgroundImage: `url(${slice.primary.image.url})` }">
+    <div class="h-[550px] w-full lg:hidden bg-center bg-cover grayscale relative" :style="{ backgroundImage: `url(${slice.primary.image.url})` }" v-gsap.whenVisible.once.from='{ autoAlpha: 0, duration: .5 }'>
       <div 
-      class="bg-stone-950/50 z-30 absolute top-1/2 py-6 px-4 w-full text-center
-              lg:bg-stone-950/85 lg:w-1/2 lg:h-full lg:pt-48 lg:p-24 lg:left-0 lg:top-0 lg:text-left
-      ">
+      class="bg-stone-950/50 z-30 absolute top-1/2 py-6 px-4 w-full text-center -mt-12">
         <PrismicText
             :field="slice.primary.title"
             class="text-3xl mb-4"
@@ -75,7 +73,7 @@ defineProps(
         <PrismicText
             :field="slice.primary.body"
             class="text-lg"
-            wrapper="p"
+            
         />
       </div>
     </div>
@@ -83,20 +81,22 @@ defineProps(
       <div 
       class="bg-stone-950/50 z-30 absolute bottom-0 py-3 w-full text-center
               lg:bg-stone-950/85 lg:w-2/5 lg:h-full lg:pt-48 lg:p-24 lg:left-0 lg:top-0 lg:text-left
-      ">
+      " v-gsap.whenVisible.once.from='{ autoAlpha: 0, x:-55, duration: .75 }'>
         <PrismicText
             :field="slice.primary.title"
             class=""
             wrapper="h1"
+            v-gsap.whenVisible.once.from='{ autoAlpha: 0, x: -45, duration: 1, delay: 1 }'
           />
         <PrismicText
             :field="slice.primary.body"
             class=""
             wrapper="p"
+            v-gsap.whenVisible.once.from='{ autoAlpha: 0, x: -45, duration: 1.25, delay:1.5 }'
         />
       </div>
       <div class="w-full h-full">
-        <PrismicImage class="w-full grayscale" :field="slice.primary.image" />
+        <PrismicImage class="w-full grayscale" :field="slice.primary.image" v-gsap.whenVisible.once.from='{ autoAlpha: 0, duration: .5 }'/>
       </div>
     </div>
   </div>

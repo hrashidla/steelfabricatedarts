@@ -21,7 +21,7 @@ defineProps(
       class="feature-section pt-12 lg:pt-24 border-t border-1 border-stone-800"
     >
     <!-- <pre>{{ slice }}</pre> -->
-      <div class="lg:flex gap-x-16">
+      <div class="lg:flex gap-x-16" v-gsap.whenVisible.from="{ opacity: 0, y: 32 }">
         <div class="lg:w-1/2 mb-12 lg:mb-0">
           <h2 class="mb-12">{{ slice.primary.title }}</h2>
           <div class=""><PrismicRichText 
