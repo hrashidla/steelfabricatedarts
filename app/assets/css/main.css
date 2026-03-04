@@ -29,18 +29,19 @@ h1{
   font-style: normal;
   text-transform:uppercase;
   font-weight:800;
-  @apply text-2xl lg:text-6xl mb-0 lg:mb-4
+  @apply text-3xl lg:text-6xl mb-0 lg:mb-4
   
 }
 h2{
-  font-family: "Lexend Black", sans-serif;
+  font-family: "Lexend", sans-serif;
   font-optical-sizing: auto;
   font-weight: 900;
   font-style: normal;
   text-transform:uppercase;
-  @apply text-xl lg:text-3xl mb-2 lg:mb-4
+  @apply text-2xl lg:text-3xl mb-2 lg:mb-4
 }
 h3{
+  font-family: "Lexend", sans-serif;
   @apply text-lg lg:text-2xl text-stone-500 mb-2 lg:mb-4
 }
 p{ 
