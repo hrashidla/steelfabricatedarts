@@ -21,8 +21,8 @@ defineProps<{ settings?: Content.SettingsDocument }>()
               <div>Owner</div>
               <div class="mb-2">Steel Fabricated Arts</div>
               <div class="mb-2">Lincoln Heights, Los Angeles</div>
-              <div>(555)-510-7777</div>
-              <div>stevemaybecampos@gmail.com</div>
+              <!-- <div>(555)-510-7777</div> -->
+              <!-- <div>stevemaybecampos@gmail.com</div> -->
             </div>
           </div>
           <div class="lg:w-1/2">
