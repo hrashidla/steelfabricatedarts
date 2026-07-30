@@ -1,11 +1,11 @@
 <script setup lang="ts">
 //import gsap from 'gsap';
 import type { Content } from "@prismicio/client";
-import { RoughEase } from 'gsap/EasePack'
+//import { RoughEase } from 'gsap/EasePack'
 
-onBeforeMount(() => {
-  useGSAP().registerPlugin(RoughEase)
-})
+// onBeforeMount(() => {
+//   useGSAP().registerPlugin(RoughEase)
+// })
 
 // The array passed to `getSliceComponentProps` is purely optional.
 // Consider it as a visual hint for you when templating your slice.
@@ -67,7 +67,7 @@ defineProps(
 
 <template>
   <div data-slice-type="slice.slice_type" data-slice-variation="slice.variation">
-    <div class="h-[550px] w-full lg:hidden bg-center bg-cover grayscale relative" :style="{ backgroundImage: `url(${slice.primary.image.url})` }" v-gsap.whenVisible.once.from='{ autoAlpha: 0, duration: .5 }'>
+    <div class="h-[550px] w-full lg:hidden bg-center bg-cover grayscale relative" :style="{ backgroundImage: `url(${slice.primary.image.url})` }">
       <div 
       class="bg-stone-950/50 z-30 absolute top-1/2 py-6 px-4 w-full text-center -mt-12">
         <PrismicText
@@ -86,22 +86,21 @@ defineProps(
       <div 
       class="bg-stone-950/50 z-30 absolute bottom-0 py-3 w-full text-center
               lg:bg-stone-950/85 lg:w-2/5 lg:h-full lg:pt-48 lg:p-24 lg:left-0 lg:top-0 lg:text-left
-      " v-gsap.whenVisible.once.from='{ autoAlpha: 0, x:-55, duration: .75, delay:.1, ease: "power2.out", }'>
+      ">
         <PrismicText
             :field="slice.primary.title"
             class=""
             wrapper="h1"
-            v-gsap.whenVisible.once.from='{ autoAlpha: 0, x: -45, duration: 1, delay: .75, ease: "power2.out" }'
+            
           />
         <PrismicText
             :field="slice.primary.body"
             class=""
             wrapper="p"
-            v-gsap.whenVisible.once.from='{ autoAlpha: 0, x: -45, duration: 1, delay:.85, ease: "power2.out", }'
         />
       </div>
       <div class="w-full h-full">
-        <PrismicImage class="w-full grayscale" :field="slice.primary.image" v-gsap.whenVisible.once.from='{ autoAlpha: 0, duration: .75, ease: "power2.out", }'/>
+        <PrismicImage class="w-full grayscale" :field="slice.primary.image"/>
       </div>
     </div>
   </div>
