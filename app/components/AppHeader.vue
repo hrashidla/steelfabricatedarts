@@ -41,11 +41,11 @@ const isOpen = ref(false)
         >
           <Icon name="ph:x-bold" />
         </button>
-        <ul class="grid justify-items-end gap-8">
+        <ul class="grid justify-items-end gap-2">
           <li v-for="link in settings?.data.navigation" :key="link.key">
             <PrismicLink
               :field="link"
-              class="block min-h-6 px-3 text-xl first:mt-8"
+              class="block min-h-6 px-3 text-xl first:mt-6"
               :class="{ buttonLink: link.variant === 'Button' }"
               @click="isOpen = false"
             />

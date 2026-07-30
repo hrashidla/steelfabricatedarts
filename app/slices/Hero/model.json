@@ -40,6 +40,17 @@
             },
             "thumbnails": []
           }
+        },
+        "cta": {
+          "type": "Link",
+          "config": {
+            "label": "CTA",
+            "placeholder": "Buy Now",
+            "select": null,
+            "allowTargetBlank": false,
+            "allowText": true,
+            "repeat": false
+          }
         }
       },
       "items": {}

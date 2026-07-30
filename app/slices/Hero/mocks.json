@@ -26,7 +26,6 @@
 				]
 			},
 			"image": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
@@ -45,7 +44,18 @@
 					"background": "transparent"
 				},
 				"alt": "then",
+				"credits": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"cta": {
+				"__TYPE__": "LinkContent",
+				"key": "23c6f035-69f7-43e9-8d5a-41c4d5b63d79",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://twitter.com",
+					"text": "central"
+				}
 			}
 		},
 		"items": []

@@ -78,8 +78,10 @@ defineProps(
         <PrismicText
             :field="slice.primary.body"
             class="text-lg"
-            
         />
+         <div v-if="slice.primary.cta.text" class="pt-4">
+          <PrismicLink :field="slice.primary.cta" class="block buttonLink"/>
+        </div>
       </div>
     </div>
     <div class="w-full relative hidden lg:block">
@@ -98,6 +100,10 @@ defineProps(
             class=""
             wrapper="p"
         />
+        <div v-if="slice.primary.cta.text">
+          <PrismicLink :field="slice.primary.cta" class="buttonLink"/>
+        </div>
+        
       </div>
       <div class="w-full h-full">
         <PrismicImage class="w-full grayscale" :field="slice.primary.image"/>
